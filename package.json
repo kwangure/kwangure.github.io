@@ -1,21 +1,23 @@
 {
-  "name": "~TODO~",
+  "name": "kwangure.github.io",
   "version": "0.0.1",
   "scripts": {
     "dev": "svelte-kit dev",
     "build": "svelte-kit build",
     "preview": "svelte-kit preview",
+    "deploy": "npm run build && gh-pages -t -d build",
     "lint": "eslint --ignore-path .gitignore ."
   },
   "devDependencies": {
+    "@sveltejs/adapter-static": "^1.0.0-next.13",
     "@sveltejs/kit": "next",
     "eslint": "^7.22.0",
     "eslint-plugin-svelte3": "^3.2.0",
-    "svelte": "^3.34.0",
-    "svelte-preprocess": "^4.7.3"
+    "gh-pages": "^3.2.3",
+    "svelte": "^3.34.0"
   },
   "type": "module",
   "dependencies": {
-    "@kwangure/strawberry": "^0.27.6"
+    "@kwangure/strawberry": "^0.29.1"
   }
 }

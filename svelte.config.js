@@ -1,10 +1,11 @@
-import preprocess from 'svelte-preprocess'
-import { preprocessConfig } from "@kwangure/strawberry/config/index.cjs";
+import adapter from "@sveltejs/adapter-static";
+import { strawberryPreproces } from "@kwangure/strawberry/config/index.js";
 
-/** @type {import('@sveltejs/kit').Config} */
+/** @type {import("@sveltejs/kit").Config} */
 export default {
-	preprocess: preprocess(preprocessConfig),
+	preprocess: strawberryPreproces,
 	kit: {
-		target: 'body'
-	}
+		adapter: adapter(),
+		target: "body",
+	},
 };

@@ -39,12 +39,10 @@
         <svelte:fragment slot="popup">
             <Input hideLabel readonly value={formattedHref}/>
             <div class="buttons">
-                <Button icon={mdiContentCopy} iconProps={{size: "18px"}}
-                    on:click={copy}>
+                <Button icon={mdiContentCopy} on:click={copy}>
                     Copy
                 </Button>
-                <Button icon={mdiOpenInNew} iconProps={{size: "18px"}}
-                    on:click={() => window.open(href)}>
+                <Button icon={mdiOpenInNew} on:click={() => window.open(href)}>
                     Open
                 </Button>
             </div>
@@ -69,8 +67,8 @@
         color: var(--br-grey-dark);
     }
     .target:hover {
-        color: var(--br-white);
-        background-color: var(--br-grey-dark);
+        color: var(--br-primary);
+        background-color: var(--br-primary-light);
     }
     .text {
         display: none;
@@ -86,6 +84,9 @@
         grid-template-columns: 1fr 1fr;
         gap: 5px;
         margin-top: 5px;
+    }
+    .buttons :global(.berry-icon) {
+        --br-icon-size: 18px;
     }
     @media only screen and (min-width: 669px) {
         .text {
