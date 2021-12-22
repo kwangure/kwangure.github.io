@@ -1,6 +1,5 @@
 <script>
     import { mdiVolumeHigh, mdiVolumeLow, mdiVolumeMedium } from "@mdi/js";
-    import kafungo_wangure from "/kafungo-wangure.mp3";
     import { onMount } from "svelte";
 
     let is_playing = false;
@@ -12,7 +11,7 @@
     }
 
     onMount(() => {
-        audio = new Audio(kafungo_wangure);
+        audio = new Audio("/kafungo-wangure.mp3");
         audio.onplay = () => is_playing = true;
         audio.onended = () => is_playing = false;
     });
