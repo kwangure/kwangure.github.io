@@ -1,55 +1,121 @@
-<section>
-    <h1>
-        Hi,&nbsp;I'm <b>Kafungo.</b>
-    </h1>
-    <h3>
-        I write <code>&lt;code/&gt;</code>.
-    </h3>
-    <article>
-        I build modern, resilient, and inclusive software for the web,
-        with a strong focus on performance, responsive design, and accessibility.
-    </article>
-</section>
+<script>
+    import Icon from "@kwangure/strawberry/components/Icon";
+    import { mdiLock } from "@mdi/js";
+    import Title from "$lib/components/title.svelte";
+    import Tooltip from "@kwangure/strawberry/components/Tooltip";
+
+</script>
+
+<div class="about-bar">
+    About 1 result (<Tooltip>
+        <Icon path={mdiLock}/>
+        <svelte:fragment slot="popup">
+            Ask me when we meet
+        </svelte:fragment>
+    </Tooltip> years old)
+</div>
+<Title/>
+<div class="definition">
+    <div class="word-type">
+        software engineer
+    </div>
+    <div class="accounts">
+        <div class="account">github</div>
+        <a href="http://github.com/kwangure">kwangure</a>
+        <div class="account">linkedin</div>
+        <a href="http://linkedin.com/in/kwangure">kwangure</a>
+        <div class="account">twitter</div>
+        <a href="http://twitter/kwangure">kwangure</a>
+    </div>
+    <div class="details">
+        a human that builds modern, resilient, and inclusive software for the
+        web, with a strong focus on performance, responsive design, and accessibility.
+        <div class="example">
+            "no one cares about user experience like Kafungo Wangure"
+        </div>
+        <div class="similar">
+            <span>Vaguely similar:</span>
+            <Tooltip>
+                <div class="pill">Margaret Hamilton</div>
+                <svelte:fragment slot="popup">
+                    Kafungo loves his bits and bytes.
+                </svelte:fragment>
+            </Tooltip>
+            <Tooltip>
+                <div class="pill">Barack Obama</div>
+                <svelte:fragment slot="popup">
+                    Kafungo is pragmatic but in a cool way.
+                </svelte:fragment>
+            </Tooltip>
+            <Tooltip>
+                <div class="pill">Beyoncé</div>
+                <svelte:fragment slot="popup">
+                    Kafungo can't sing to save his life, but he aspires to be awesome.
+                </svelte:fragment>
+            </Tooltip>
+        </div>
+    </div>
+</div>
 
 <style>
-    section {
-        height: 100%;
+    .about-bar {
+        height: 42px;
+        color: #70757a;
         display: flex;
-        flex-direction: column;
-        justify-content: center;
+        align-items: center;
+        margin-bottom: 16px;
     }
-    h1, h3 {
-        color: black;
+    .about-bar :global(.berry-icon) {
+        --br-icon-size: 16px;
+        color: var(--br-blue);
+        margin-right: 2px;
     }
-    h1 {
-        font-size: 4em;
-        font-weight: 300;
-        margin: 0;
+    .definition {
+        margin-top: 10px;
     }
-    h3 {
-        font-size: 1.5em;
-        font-weight: 300;
+    .word-type {
+        color: var(--goog-grey);
+        font-style: italic;
     }
-    article {
-        margin: 32px 0;
-        font-size: 1em;
-        line-height: 2;
-        max-width: 600px;
+    .accounts {
+        display: flex;
     }
-    code {
-        padding: 0 5px;
-        border-radius: var(--br-border-radius);
+    .account {
+        color: var(--goog-grey);
+        margin-right: 3px;
+    }
+    .account:after {
+        content: ":";
+    }
+    a + .account:before {
+        content: "; ";
+    }
+    .details {
+        margin-top: 4px;;
+        padding-left: 20px;
+    }
+    .example {
+        color: var(--goog-grey);
+    }
+    .similar {
+        display: flex;
+        align-items: center;
+        margin-top: 4px;
+    }
+    .similar span {
+        margin-top: 6px;
+        margin-right: 6px;
+        color: var(--goog-grey);
+    }
+    .pill {
+        cursor: pointer;
+        padding-inline: 12px;
+        margin-top: 6px;
+        margin-right: 4px;;
+        border: var(--br-border);
+        border-radius: 20px;
+    }
+    .pill:hover {
         background-color: var(--br-grey-light);
-    }
-    @media only screen and (min-width: 500px) {
-        h1 {
-            font-size: 5em;
-        }
-        h3 {
-            font-size: 2.5em;
-        }
-        article {
-            font-size: 1.5em;
-        }
     }
 </style>
