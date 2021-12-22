@@ -7,7 +7,7 @@
     let is_dark = false;
 </script>
 
-<div class="layout">
+<div class="layout" class:is_dark>
     <nav>
         <div class="top">
             <a class="logo" href="/">
@@ -48,14 +48,49 @@
 </div>
 
 <style>
-    @import url("https://fonts.googleapis.com/css?family=Product+Sans");
-    /* ------ Global definitions ------ */
+    /* latin */
+    @font-face {
+        font-family: 'Product Sans';
+        font-style: normal;
+        font-weight: 500;
+        src: local('Product Sans Medium'), local('ProductSans-Medium'), url(https://fonts.gstatic.com/s/productsans/v9/pxicypQkot1TnFhsFMOfGShd5PSbT2lB.woff2) format('woff2');
+        unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+2074, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
     .layout {
+        /* ------ Google Vars ------ */
         --goog-red: #dd5546;
         --goog-blue: #4f88e3;
         --goog-green: #279a48;
         --goog-yellow: #e4ac04;
-        --goog-grey: #70757a;
+
+        --goog-white: #fff;
+        --goog-grey-100: #ebebeb;
+        --goog-grey-200: #bdc1c6;
+        --goog-grey-300: #70757a;
+        --goog-grey-400: #5f6368;
+        --goog-grey-500: #3c4043;
+        --goog-grey-900: #202124;
+        --goog-black: #000;
+
+        /* ------ Layout Vars ------*/
+        --font-color: var(--goog-grey-900);
+        --border-color: var(--goog-grey-100);
+        --background-color: var(--goog-white);
+        --icon-color: var(--goog-grey-400);
+    }
+    .layout.is_dark {
+        /* ------ Google Vars ------ */
+        --goog-blue: #8ab4f8;
+
+        /* ------ Layout Vars ------*/
+        --font-color: var(--goog-grey-200);
+        --border-color: var(--goog-grey-500);
+        --background-color: var(--goog-grey-900);
+        --icon-color: var(--goog-grey-100);
+    }
+    .layout {
+        color: var(--font-color);
+        background-color: var(--background-color);
     }
     /* ------ Strawberry CSS Overrides ------ */
     .layout :global(.berry-tooltip) {
@@ -71,28 +106,25 @@
     .layout :global(.berry-tooltip .arrow) {
         display: none;
     }
+    .layout :global(a) {
+        color: var(--goog-blue);
+    }
+    /* ------ App ------ */
     .layout {
-        --page-width: 100%;
         height: 100%;
         font-family: "Inter", var(--br-font-family);
         display: grid;
         grid-template-rows: max-content 1fr;
-    }
-    .layout :global(.berry-navbar.berry-navbar) {
-        --br-nav-max-width: 100%;
-        --br-nav-width: calc(100vw - 60px);
-        --br-nav-height: 72px;
-        --br-nav-block-padding: 0px;
     }
     .top, .bottom {
         display: flex;
         align-items: center;
     }
     .top {
-        margin-top: 26px;
+        margin-top: 28px;
     }
     .bottom {
-        border-bottom: 1px solid #ebebeb;
+        border-bottom: 1px solid var(--border-color);
     }
     .bottom-actions {
         display: flex;
@@ -124,11 +156,10 @@
     }
     .logo {
         display: flex;
-        gap: 0.5px;
-        font-size: 24px;
+        font-size: 26px;
         font-family: 'Product Sans';
-        font-weight: 600;
-        padding-inline: 30px;
+        font-weight: 500;
+        padding-inline: 26px;
     }
     .logo span:nth-child(1) {
         color: var(--goog-blue);
@@ -154,6 +185,9 @@
     .logo span:nth-child(8) {
         color: var(--goog-blue);
     }
+    .is_dark .logo span {
+        color: var(--goog-grey-100);
+    }
     .top-actions {
         margin-inline: auto 30px;
     }
@@ -161,7 +195,7 @@
         background-color: transparent;
         border-radius: 50%;
         border: none;
-        color: #5f6368;
+        color: var(--icon-color);
         height: 40px;
         width: 40px;
         display: flex;
@@ -172,6 +206,9 @@
     }
     button:hover {
         background: rgba(0, 0, 0, 0.1);
+    }
+    .is_dark button:hover {
+        background: rgba(232, 234, 237, 0.1);
     }
     button :global(.berry-icon) {
         --br-icon-size: 22px;

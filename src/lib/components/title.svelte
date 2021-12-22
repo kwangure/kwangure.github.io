@@ -21,8 +21,7 @@
 
 <div class="title">
     <div class="audio-wrapper" class:is_playing on:click={play}>
-        <div class="audio high medium low"
-        style="--volume-high:{svg(mdiVolumeHigh, "0px")};--volume-medium:{svg(mdiVolumeMedium, "-2px")};--volume-low:{svg(mdiVolumeLow, "-4px")};"/>
+        <div class="audio" style="--volume-high:{svg(mdiVolumeHigh, "0px")};--volume-medium:{svg(mdiVolumeMedium, "-2px")};--volume-low:{svg(mdiVolumeLow, "-4px")};"/>
     </div>
     <div class="word">
         <div class="name">Kafungo Wangure</div>
@@ -47,24 +46,29 @@
         display: flex;
         align-items: center;
         justify-content: center;
+        border-radius: 50%;
+        border: var(--br-border);
+        height: min-content;
     }
     .audio-wrapper.is_playing {
         cursor: default;
     }
     .audio {
-        border-radius: 50%;
         display: flex;
         align-items: center;
         justify-content: center;
         height: 34px;
         width: 34px;
         padding: 5px;
-        border: var(--br-border);
-        color: #1973e8;
-        background: no-repeat;
-        background-image: var(--volume-high);
-        background-size: 24px;
-        background-position: center;
+        background-color: var(--goog-blue);
+        -webkit-mask-image: var(--volume-high);
+        mask-image: var(--volume-high);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        -webkit-mask-size: 24px;
+        mask-size: 24px;
+        -webkit-mask-position: center;
+        mask-position: center;
         transition: background-color 0.1s linear;
     }
     @keyframes playing {
@@ -76,7 +80,7 @@
     }
     .audio-wrapper.is_playing .audio {
         animation: playing 0.5s linear infinite;
-        background-color: #f2f2f2;
+        background-color: var(--goog-grey-100);
     }
     .audio :global(.berry-icon) {
         --br-icon-size: 24px;

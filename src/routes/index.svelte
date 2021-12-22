@@ -60,14 +60,14 @@
 <style>
     .about-bar {
         height: 42px;
-        color: #70757a;
+        color: var(--goog-grey);
         display: flex;
         align-items: center;
         margin-bottom: 16px;
     }
     .about-bar :global(.berry-icon) {
         --br-icon-size: 16px;
-        color: var(--br-blue);
+        color: var(--goog-blue);
         margin-right: 2px;
     }
     .definition {
