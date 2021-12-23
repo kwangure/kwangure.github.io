@@ -25,7 +25,7 @@
         <div class="account">linkedin</div>
         <a href="http://linkedin.com/in/kwangure">kwangure</a>
         <div class="account">twitter</div>
-        <a href="http://twitter/kwangure">kwangure</a>
+        <a href="http://twitter.com/kwangure">kwangure</a>
     </div>
     <div class="details">
         a human that builds modern, resilient, and inclusive software for the
