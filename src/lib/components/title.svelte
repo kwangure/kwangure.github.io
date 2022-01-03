@@ -1,6 +1,7 @@
 <script>
     import { mdiVolumeHigh, mdiVolumeLow, mdiVolumeMedium } from "@mdi/js";
     import { onMount } from "svelte";
+    import Tooltip from "@kwangure/strawberry/components/Tooltip";
 
     let is_playing = false;
     let audio;
@@ -20,9 +21,14 @@
 </script>
 
 <div class="title">
-    <div class="audio-wrapper" class:is_playing on:click={play}>
-        <div class="audio" style="--volume-high:{svg(mdiVolumeHigh, "0px")};--volume-medium:{svg(mdiVolumeMedium, "-2px")};--volume-low:{svg(mdiVolumeLow, "-4px")};"/>
-    </div>
+    <Tooltip>
+        <div class="audio-wrapper" class:is_playing on:click={play}>
+            <div class="audio" style="--volume-high:{svg(mdiVolumeHigh, "0px")};--volume-medium:{svg(mdiVolumeMedium, "-2px")};--volume-low:{svg(mdiVolumeLow, "-4px")};"/>
+        </div>
+        <svelte:fragment slot="popup">
+            A computer's best attempt... 🤷‍♀️
+        </svelte:fragment>
+    </Tooltip>
     <div class="word">
         <div class="name">Kafungo Wangure</div>
         <div class="pronunciation">/kɑːfʊŋɡəʊ wʌːŋɡurɛ/</div>
