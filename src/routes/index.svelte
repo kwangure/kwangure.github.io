@@ -60,7 +60,7 @@
 <style>
     .about-bar {
         height: 42px;
-        color: var(--goog-grey);
+        color: var(--goog-grey-300);
         display: flex;
         align-items: center;
         margin-bottom: 16px;
@@ -74,14 +74,14 @@
         margin-top: 10px;
     }
     .word-type {
-        color: var(--goog-grey);
+        color: var(--goog-grey-300);
         font-style: italic;
     }
     .accounts {
         display: flex;
     }
     .account {
-        color: var(--goog-grey);
+        color: var(--goog-grey-300);
         margin-right: 3px;
     }
     .account:after {
@@ -95,7 +95,7 @@
         padding-left: 20px;
     }
     .example {
-        color: var(--goog-grey);
+        color: var(--goog-grey-300);
     }
     .similar {
         display: flex;
@@ -105,7 +105,7 @@
     .similar span {
         margin-top: 6px;
         margin-right: 6px;
-        color: var(--goog-grey);
+        color: var(--goog-grey-300);
     }
     .pill {
         cursor: pointer;
