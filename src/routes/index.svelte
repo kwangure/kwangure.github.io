@@ -60,7 +60,7 @@
 <style>
     .about-bar {
         height: 42px;
-        color: var(--goog-grey-300);
+        color: var(--font-color-secondary);
         display: flex;
         align-items: center;
         margin-bottom: 16px;
@@ -74,14 +74,14 @@
         margin-top: 10px;
     }
     .word-type {
-        color: var(--goog-grey-300);
+        color: var(--font-color-secondary);
         font-style: italic;
     }
     .accounts {
         display: flex;
     }
     .account {
-        color: var(--goog-grey-300);
+        color: var(--font-color-secondary);
         margin-right: 3px;
     }
     .account:after {
@@ -91,11 +91,11 @@
         content: "; ";
     }
     .details {
-        margin-top: 4px;;
+        margin-top: 8px;
         padding-left: 20px;
     }
     .example {
-        color: var(--goog-grey-300);
+        color: var(--font-color-secondary);
     }
     .similar {
         display: flex;
@@ -105,17 +105,17 @@
     .similar span {
         margin-top: 6px;
         margin-right: 6px;
-        color: var(--goog-grey-300);
+        color: var(--font-color-secondary);
     }
     .pill {
         cursor: pointer;
         padding-inline: 12px;
         margin-top: 6px;
         margin-right: 4px;;
-        border: var(--br-border);
+        border: 1px solid var(--border-color);
         border-radius: 20px;
     }
     .pill:hover {
-        background-color: var(--br-grey-light);
+        background-color: var(--background-color-hover);
     }
 </style>

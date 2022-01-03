@@ -64,29 +64,36 @@
         --goog-yellow: #e4ac04;
 
         --goog-white: #fff;
-        --goog-grey-100: #ebebeb;
-        --goog-grey-200: #bdc1c6;
-        --goog-grey-300: #70757a;
-        --goog-grey-400: #5f6368;
-        --goog-grey-500: #3c4043;
+        --goog-grey-100: #f8f9fa;
+        --goog-grey-200: #dadce0;
+        --goog-grey-300: #bdc1c6;
+        --goog-grey-400: #9aa0a6;
+        --goog-grey-500: #70757a;
+        --goog-grey-600: #5f6368;
+        --goog-grey-700: #3c4043;
+        --goog-grey-800: #303134;
         --goog-grey-900: #202124;
         --goog-black: #000;
 
         /* ------ Layout Vars ------*/
         --font-color: var(--goog-grey-900);
-        --border-color: var(--goog-grey-100);
+        --font-color-secondary: var(--goog-grey-500);
+        --border-color: var(--goog-grey-200);
         --background-color: var(--goog-white);
-        --icon-color: var(--goog-grey-400);
+        --background-color-hover: var(--goog-grey-100);
+        --icon-color: var(--goog-grey-600);
     }
     .layout.is_dark {
         /* ------ Google Vars ------ */
         --goog-blue: #8ab4f8;
 
         /* ------ Layout Vars ------*/
-        --font-color: var(--goog-grey-200);
-        --border-color: var(--goog-grey-500);
+        --font-color: var(--goog-grey-300);
+        --font-color-secondary: var(--goog-grey-400);
+        --border-color: var(--goog-grey-700);
         --background-color: var(--goog-grey-900);
-        --icon-color: var(--goog-grey-100);
+        --background-color-hover: var(--goog-grey-800);
+        --icon-color: var(--goog-grey-200);
     }
     .layout {
         color: var(--font-color);
@@ -146,9 +153,9 @@
         content: " ";
         display: block;
         width: 115%;
-        height: 3px;
+        height: 3.5px;
         background-color: var(--goog-blue);
-        margin-top: 10px;
+        margin: 10px 0 -1px;
     }
     .bottom-actions > div.active div {
         display: flex;
@@ -186,7 +193,7 @@
         color: var(--goog-blue);
     }
     .is_dark .logo span {
-        color: var(--goog-grey-100);
+        color: var(--goog-grey-200);
     }
     .top-actions {
         margin-inline: auto 30px;

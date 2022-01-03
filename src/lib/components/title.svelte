@@ -86,7 +86,7 @@
     }
     .audio-wrapper.is_playing .audio {
         animation: playing 0.5s linear infinite;
-        background-color: var(--goog-grey-100);
+        background-color: var(--goog-grey-200);
     }
     .audio :global(.berry-icon) {
         --br-icon-size: 24px;
