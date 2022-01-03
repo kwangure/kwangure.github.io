@@ -77,7 +77,7 @@
 
         --goog-red: #dd5546;
         --goog-blue: var(--goog-blue-500);
-        --goog-green: #030303;
+        --goog-green: #279a48;
         --goog-yellow: #e4ac04;
 
         /* ------ Layout Vars ------*/
