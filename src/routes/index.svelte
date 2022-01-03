@@ -83,9 +83,6 @@
     .account:after {
         content: ":";
     }
-    a + .account:before {
-        content: "; ";
-    }
     .details {
         margin-top: 8px;
         padding-left: 20px;
