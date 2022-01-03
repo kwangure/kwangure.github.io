@@ -53,11 +53,17 @@
         align-items: center;
         justify-content: center;
         border-radius: 50%;
-        border: var(--br-border);
+        border: 1px solid var(--border-color);
         height: min-content;
+    }
+    .audio-wrapper:hover,
+    :global(.is_dark) .audio-wrapper.is_playing {
+        background: var(--background-color-hover);
     }
     .audio-wrapper.is_playing {
         cursor: default;
+        background-color: var(--goog-blue-100);
+        border-color: var(--goog-blue-200);
     }
     .audio {
         display: flex;
@@ -78,15 +84,29 @@
         transition: background-color 0.1s linear;
     }
     @keyframes playing {
-        0% { background-image: var(--volume-high) }
-        25% { background-image: var(--volume-medium) }
-        50% { background-image: var(--volume-low) }
-        75% { background-image: var(--volume-medium) }
-        100% { background-image: var(--volume-high) }
+        0% {
+            -webkit-mask-image: var(--volume-high);
+            mask-image: var(--volume-high)
+        }
+        25% {
+            -webkit-mask-image: var(--volume-medium);
+            mask-image: var(--volume-medium)
+        }
+        50% {
+            -webkit-mask-image: var(--volume-low);
+            mask-image: var(--volume-low)
+        }
+        75% {
+            -webkit-mask-image: var(--volume-medium);
+            mask-image: var(--volume-medium)
+        }
+        100% {
+            -webkit-mask-image: var(--volume-high);
+            mask-image: var(--volume-high)
+        }
     }
     .audio-wrapper.is_playing .audio {
         animation: playing 0.5s linear infinite;
-        background-color: var(--goog-grey-200);
     }
     .audio :global(.berry-icon) {
         --br-icon-size: 24px;
@@ -105,7 +125,7 @@
         display: none/*flex*/;
         align-items: center;
         margin: 8px 0 6px;
-        border: var(--br-border);
+        border: 1px solid var(--border-color);
         border-radius: 3px;
         overflow: hidden;
         cursor: pointer;

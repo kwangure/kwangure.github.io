@@ -58,10 +58,10 @@
     }
     .layout {
         /* ------ Google Vars ------ */
-        --goog-red: #dd5546;
-        --goog-blue: #4f88e3;
-        --goog-green: #279a48;
-        --goog-yellow: #e4ac04;
+        --goog-blue-100: #e8f0fe;
+        --goog-blue-200: #d2e3fc;
+        --goog-blue-300: #8ab4f8;
+        --goog-blue-500: #4f88e3;
 
         --goog-white: #fff;
         --goog-grey-100: #f8f9fa;
@@ -75,6 +75,11 @@
         --goog-grey-900: #202124;
         --goog-black: #000;
 
+        --goog-red: #dd5546;
+        --goog-blue: var(--goog-blue-500);
+        --goog-green: #030303;
+        --goog-yellow: #e4ac04;
+
         /* ------ Layout Vars ------*/
         --font-color: var(--goog-grey-900);
         --font-color-secondary: var(--goog-grey-500);
@@ -85,7 +90,7 @@
     }
     .layout.is_dark {
         /* ------ Google Vars ------ */
-        --goog-blue: #8ab4f8;
+        --goog-blue: var(--goog-blue-300);
 
         /* ------ Layout Vars ------*/
         --font-color: var(--goog-grey-300);
@@ -212,7 +217,7 @@
         transition: all var(--br-transition-duration) ease;
     }
     button:hover {
-        background: rgba(0, 0, 0, 0.1);
+        background: var(--background-color-hover);
     }
     .is_dark button:hover {
         background: rgba(232, 234, 237, 0.1);
