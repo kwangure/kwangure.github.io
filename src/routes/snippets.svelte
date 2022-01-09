@@ -8,7 +8,7 @@
 
     const snippets = [
         {
-            title: "01. How to export a CSS API from a Svelte component",
+            title: "How to export a CSS API from a Svelte component",
             url: "how-export-css-api-from-svelte-component",
             excerpt: `With today's Svelte there's no standard way of telling component consumers
 what styles they're allowed to override. You should ideally communicate, what is

@@ -2,6 +2,7 @@
     import Code from "@kwangure/strawberry/components/Code";
 
     export let language;
+    export let code;
 </script>
 
 <div class="frame">
@@ -10,7 +11,7 @@
             <slot name="filename"></slot>
         </div>
     </div>
-    <Code {language}><slot name="code"/></Code>
+    <Code {language} {code}/>
 </div>
 
 <style>

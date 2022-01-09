@@ -1,5 +1,5 @@
 <script>
-    import Code from "@kwangure/strawberry/components/Code";
+    import Code, { css, svelte } from "@kwangure/strawberry/components/Code";
     import File from "$lib/components/file.svelte";
 </script>
 
@@ -18,66 +18,61 @@
     components or design system.
 </p>
 <p>
-    For one...you should not be using the <Code inline language="css">{":global()"}</Code>
+    For one...you should not be using the <Code inline language={css} code={":global"}/>
     selector most of the time (read <i>ever</i>).
 </p>
 
 <h2>Structuring the API </h2>
 <p>
-    Use valueless CSS custom properties via <Code inline language="css">{"var()"}</Code>
+    Use valueless CSS custom properties via <Code inline language={css} code={"var()"}/>
     with your default/intended styles as fallback.
 </p>
-<File language="svelte">
-    <svelte:fragment slot="filename">Button.svelte</svelte:fragment>
-    <svelte:fragment slot="code">{`
-<button>
+<File language={svelte} code={
+`<button>
     <slot/>
 </button>
-<style>
+<style\>
     button {
         color: var(--button-color, red);
         width: var(--button-width, 50px);
     }
-</style\>
-`.trim()}</svelte:fragment>
-
+</style>`}>
+    <svelte:fragment slot="filename">Button.svelte</svelte:fragment>
 </File>
 <p>
     The message to consumers of you component should be, "Any selector or
     DOM element you target could change at any time. Only override styles using
-    <Code inline language="css">{"--button-color"}</Code> and
-    <Code inline language="css">{"--button-width"}</Code>".
+    <Code inline language={css} code={"--button-color"}/> and
+    <Code inline language={css} code={"--button-width"}/>".
 </p>
 <p>
     Using <i>virgin</i>👀 custom properties also avoids
-    <Code inline language="css">{"!important"}</Code> and
-    <Code inline language="css">{".repeat.repeat.repeat"}</Code> fights for CSS
+    <Code inline language={css} code={"!important"}/> and
+    <Code inline language={css} code={".repeat.repeat.repeat"}/> fights for CSS
     specificity.
 </p>
 
 <h2>Using the API</h2>
 <p>
     Generally, you should override the styles of child components using custom properties
-    in the <Code inline language="svelte">{"<style/>"}</Code> tag. For one off uses
+    in the <Code inline language={svelte} code={"<style/>"}/> tag. For one off uses
     you may pass a custom property attribute, but this has the disadvantage that Svelte
-    inserts a wrapper <Code inline language="svelte">{"<div/>"}</Code> into your code
+    inserts a wrapper <Code inline language={svelte} code={"<div/>"}/> into your code
     and will lead to repetition if you are overriding the same style on multiple components.
 </p>
-<File language="svelte">
-    <svelte:fragment slot="filename">Parent.svelte</svelte:fragment>
-    <svelte:fragment slot="code">{`
-<script\>
-    import Button from "./Button.svelte";
-</script\>
+<File language={svelte} code={
+`<script\>
+    import Button from"./Button.svelte";
+</script>
 <div class="parent">
     <Button --button-color="blue">Click me!</Button>
     <Button>Click me!</Button>
 </div>
 
-<style>
+<style\>
     .parent {
         --button-width: 100px;
     }
-</style\>
-`.trim()}</svelte:fragment>
+\</style>`}>
+    <svelte:fragment slot="filename">Parent.svelte</svelte:fragment>
 </File>
