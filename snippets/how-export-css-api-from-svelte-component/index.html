@@ -8,19 +8,19 @@
 		
 
 		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
-		<link rel="stylesheet" href="/_app/assets/vendor-1897d8ca.css">
+		<link rel="stylesheet" href="/_app/assets/vendor-abc33860.css">
 		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-4a594095.css">
 		<link rel="stylesheet" href="/_app/assets/pages/snippets/__layout.svelte-37906c03.css">
 		<link rel="stylesheet" href="/_app/assets/pages/snippets/how-export-css-api-from-svelte-component.svelte-4ddc8d0b.css">
-		<link rel="modulepreload" href="/_app/start-36926b99.js">
-		<link rel="modulepreload" href="/_app/chunks/vendor-22f074c9.js">
-		<link rel="modulepreload" href="/_app/pages/__layout.svelte-d5ca779c.js">
-		<link rel="modulepreload" href="/_app/chunks/stores-682cf0ea.js">
-		<link rel="modulepreload" href="/_app/pages/snippets/__layout.svelte-2c7451f2.js">
-		<link rel="modulepreload" href="/_app/pages/snippets/how-export-css-api-from-svelte-component.svelte-7613d8ab.js">
+		<link rel="modulepreload" href="/_app/start-40456112.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-1cada2f6.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-dad8c58d.js">
+		<link rel="modulepreload" href="/_app/chunks/stores-4b84385a.js">
+		<link rel="modulepreload" href="/_app/pages/snippets/__layout.svelte-45782aa5.js">
+		<link rel="modulepreload" href="/_app/pages/snippets/how-export-css-api-from-svelte-component.svelte-4f6bf8f1.js">
 
 		<script type="module">
-			import { start } from "/_app/start-36926b99.js";
+			import { start } from "/_app/start-40456112.js";
 			start({
 				target: document.querySelector("body"),
 				paths: {"base":"","assets":""},
@@ -32,9 +32,9 @@
 					status: 200,
 					error: null,
 					nodes: [
-						import("/_app/pages/__layout.svelte-d5ca779c.js"),
-						import("/_app/pages/snippets/__layout.svelte-2c7451f2.js"),
-						import("/_app/pages/snippets/how-export-css-api-from-svelte-component.svelte-7613d8ab.js")
+						import("/_app/pages/__layout.svelte-dad8c58d.js"),
+						import("/_app/pages/snippets/__layout.svelte-45782aa5.js"),
+						import("/_app/pages/snippets/how-export-css-api-from-svelte-component.svelte-4f6bf8f1.js")
 					],
 					url: new URL("http://prerender/snippets/how-export-css-api-from-svelte-component"),
 					params: {}
@@ -77,86 +77,66 @@
     proposes <i>one way</i> (the best way 😊) to provide a CSS API for consumers of your
     components or design system.
 </p>
-<p>For one...you should not be using the <pre class="input svelte-1xtccqj">:global()</pre>
-
-<pre class="berry-code svelte-1xtccqj inline"><!-- HTML_TAG_START --><!-- HTML_TAG_END -->
+<p>For one...you should not be using the <pre class="berry-code svelte-3lyfvy inline"><!-- HTML_TAG_START -->:global<!-- HTML_TAG_END -->
 </pre>
     selector most of the time (read <i>ever</i>).
 </p>
 
 <h2>Structuring the API </h2>
-<p>Use valueless CSS custom properties via <pre class="input svelte-1xtccqj">var()</pre>
-
-<pre class="berry-code svelte-1xtccqj inline"><!-- HTML_TAG_START --><!-- HTML_TAG_END -->
+<p>Use valueless CSS custom properties via <pre class="berry-code svelte-3lyfvy inline"><!-- HTML_TAG_START --><span class="hljs-selector-tag">var</span>()<!-- HTML_TAG_END -->
 </pre>
     with your default/intended styles as fallback.
 </p>
 <div class="frame"><div class="tab-bar svelte-1vqji7p"><div class="tab svelte-1vqji7p">Button.svelte</div></div>
-    <pre class="input svelte-1xtccqj">&lt;button&gt;
-    &lt;slot/&gt;
-&lt;/button&gt;
-&lt;style&gt;
-    button {
-        color: var(--button-color, red);
-        width: var(--button-width, 50px);
+    <pre class="berry-code svelte-3lyfvy"><!-- HTML_TAG_START --><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>/&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span></span><span class="language-css">
+    <span class="hljs-selector-tag">button</span> {
+        <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--button-color, red);
+        <span class="hljs-attribute">width</span>: <span class="hljs-built_in">var</span>(--button-width, <span class="hljs-number">50px</span>);
     }
-&lt;/style&gt;</pre>
-
-<pre class="berry-code svelte-1xtccqj"><!-- HTML_TAG_START --><!-- HTML_TAG_END -->
+</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><!-- HTML_TAG_END -->
 </pre>
 </div>
 <p>The message to consumers of you component should be, &quot;Any selector or
     DOM element you target could change at any time. Only override styles using
-    <pre class="input svelte-1xtccqj">--button-color</pre>
-
-<pre class="berry-code svelte-1xtccqj inline"><!-- HTML_TAG_START --><!-- HTML_TAG_END -->
+    <pre class="berry-code svelte-3lyfvy inline"><!-- HTML_TAG_START --><span class="hljs-attr">--button-color</span><!-- HTML_TAG_END -->
 </pre> and
-    <pre class="input svelte-1xtccqj">--button-width</pre>
-
-<pre class="berry-code svelte-1xtccqj inline"><!-- HTML_TAG_START --><!-- HTML_TAG_END -->
+    <pre class="berry-code svelte-3lyfvy inline"><!-- HTML_TAG_START --><span class="hljs-attr">--button-width</span><!-- HTML_TAG_END -->
 </pre>&quot;.
 </p>
 <p>Using <i>virgin</i>👀 custom properties also avoids
-    <pre class="input svelte-1xtccqj">!important</pre>
-
-<pre class="berry-code svelte-1xtccqj inline"><!-- HTML_TAG_START --><!-- HTML_TAG_END -->
+    <pre class="berry-code svelte-3lyfvy inline"><!-- HTML_TAG_START -->!important<!-- HTML_TAG_END -->
 </pre> and
-    <pre class="input svelte-1xtccqj">.repeat.repeat.repeat</pre>
-
-<pre class="berry-code svelte-1xtccqj inline"><!-- HTML_TAG_START --><!-- HTML_TAG_END -->
+    <pre class="berry-code svelte-3lyfvy inline"><!-- HTML_TAG_START --><span class="hljs-selector-class">.repeat</span><span class="hljs-selector-class">.repeat</span><span class="hljs-selector-class">.repeat</span><!-- HTML_TAG_END -->
 </pre> fights for CSS
     specificity.
 </p>
 
 <h2>Using the API</h2>
 <p>Generally, you should override the styles of child components using custom properties
-    in the <pre class="input svelte-1xtccqj">&lt;style/&gt;</pre>
-
-<pre class="berry-code svelte-1xtccqj inline"><!-- HTML_TAG_START --><!-- HTML_TAG_END -->
+    in the <pre class="berry-code svelte-3lyfvy inline"><!-- HTML_TAG_START --><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">style</span>/&gt;</span></span><!-- HTML_TAG_END -->
 </pre> tag. For one off uses
     you may pass a custom property attribute, but this has the disadvantage that Svelte
-    inserts a wrapper <pre class="input svelte-1xtccqj">&lt;div/&gt;</pre>
-
-<pre class="berry-code svelte-1xtccqj inline"><!-- HTML_TAG_START --><!-- HTML_TAG_END -->
+    inserts a wrapper <pre class="berry-code svelte-3lyfvy inline"><!-- HTML_TAG_START --><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>/&gt;</span></span><!-- HTML_TAG_END -->
 </pre> into your code
     and will lead to repetition if you are overriding the same style on multiple components.
 </p>
 <div class="frame"><div class="tab-bar svelte-1vqji7p"><div class="tab svelte-1vqji7p">Parent.svelte</div></div>
-    <pre class="input svelte-1xtccqj">&lt;script&gt;
-    import Button from &quot;./Button.svelte&quot;;
-&lt;/script&gt;
-&lt;div class=&quot;parent&quot;&gt;
-    &lt;Button --button-color=&quot;blue&quot;&gt;Click me!&lt;/Button&gt;
-    &lt;Button&gt;Click me!&lt;/Button&gt;
-&lt;/div&gt;
+    <pre class="berry-code svelte-3lyfvy"><!-- HTML_TAG_START --><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="language-javascript">
+    <span class="hljs-keyword">import</span> <span class="hljs-title class_">Button</span> <span class="hljs-keyword">from</span><span class="hljs-string">&quot;./Button.svelte&quot;</span>;
+</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;parent&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">--button-color</span>=<span class="hljs-string">&quot;blue&quot;</span>&gt;</span>Click me!<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>&gt;</span>Click me!<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
 
-&lt;style&gt;
-    .parent {
-        --button-width: 100px;
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span></span><span class="language-css">
+    <span class="hljs-selector-class">.parent</span> {
+        <span class="hljs-attr">--button-width</span>: <span class="hljs-number">100px</span>;
     }
-&lt;/style&gt;</pre>
-
-<pre class="berry-code svelte-1xtccqj"><!-- HTML_TAG_START --><!-- HTML_TAG_END -->
+</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span></span><!-- HTML_TAG_END -->
 </pre>
 </div>
 </div></main>
