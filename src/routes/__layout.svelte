@@ -1,8 +1,12 @@
 <script>
-    import "@kwangure/strawberry/css/standardDOM";
-    import { mdiBrightness2, mdiBrightness5, mdiMagnify } from "@mdi/js";
+    import "@kwangure/strawberry/css/styles";
+    import { mdiBookOutline, mdiBrightness2, mdiBrightness5, mdiMagnify } from "@mdi/js";
     import Icon from "@kwangure/strawberry/components/Icon";
+    import NavLink from "$lib/components/nav_link.svelte";
+    import { page } from '$app/stores';
     import Tooltip from "@kwangure/strawberry/components/Tooltip";
+
+    $: ({ url: { pathname }} = $page);
 
     let is_dark = false;
 </script>
@@ -33,12 +37,12 @@
         </div>
         <div class="bottom">
             <div class="bottom-actions">
-                <div class="action active">
-                    <div>
-                        <Icon path={mdiMagnify}/>Lookup
-                    </div>
-                    <!--::after -->
-                </div>
+                <NavLink href="/" icon={mdiMagnify} active={pathname === "/"}>
+                    Lookup
+                </NavLink>
+                <NavLink href="/snippets" icon={mdiBookOutline} active={pathname.startsWith("/snippets")}>
+                    Snippets
+                </NavLink>
             </div>
         </div>
     </nav>
@@ -62,6 +66,7 @@
         --goog-blue-200: #d2e3fc;
         --goog-blue-300: #8ab4f8;
         --goog-blue-500: #4f88e3;
+        --goog-blue-700: #1a0dab;
 
         --goog-white: #fff;
         --goog-grey-100: #f8f9fa;
@@ -83,6 +88,7 @@
         /* ------ Layout Vars ------*/
         --font-color: var(--goog-grey-900);
         --font-color-secondary: var(--goog-grey-500);
+        --link-font-color: var(--goog-blue-700);
         --border-color: var(--goog-grey-200);
         --background-color: var(--goog-white);
         --background-color-hover: var(--goog-grey-100);
@@ -95,6 +101,7 @@
         /* ------ Layout Vars ------*/
         --font-color: var(--goog-grey-300);
         --font-color-secondary: var(--goog-grey-400);
+        --link-font-color: var(--goog-blue-700);
         --border-color: var(--goog-grey-700);
         --background-color: var(--goog-grey-900);
         --background-color-hover: var(--goog-grey-800);
@@ -105,6 +112,9 @@
         background-color: var(--background-color);
     }
     /* ------ Strawberry CSS Overrides ------ */
+    .layout {
+        --br-heading-color: var(--font-color);
+    }
     .layout :global(.berry-tooltip) {
         --br-black-transparent: rgba(60, 64, 67, 0.9);
         padding: 5px 6px;
@@ -118,8 +128,8 @@
     .layout :global(.berry-tooltip .arrow) {
         display: none;
     }
-    .layout :global(a) {
-        color: var(--goog-blue);
+    :global(a) {
+        color: var(--link-font-color);
     }
     /* ------ App ------ */
     .layout {
@@ -127,6 +137,7 @@
         font-family: "Inter", var(--br-font-family);
         display: grid;
         grid-template-rows: max-content 1fr;
+        overflow-y: scroll;
     }
     .top, .bottom {
         display: flex;
@@ -143,28 +154,6 @@
         align-items: center;
         padding-top: 10px;
         padding-left: 170px;
-    }
-    .bottom-actions > div {
-        display: flex;
-        align-items: center;
-        padding: 18px 12px 0;
-    }
-    .bottom-actions > div.active {
-        color: var(--goog-blue);
-        display: flex;
-        flex-direction: column;
-    }
-    .bottom-actions > div.active::after {
-        content: " ";
-        display: block;
-        width: 115%;
-        height: 3.5px;
-        background-color: var(--goog-blue);
-        margin: 10px 0 -1px;
-    }
-    .bottom-actions > div.active div {
-        display: flex;
-        align-items: center;
     }
     .logo {
         display: flex;

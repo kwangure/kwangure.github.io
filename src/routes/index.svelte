@@ -1,19 +1,19 @@
 <script>
     import Icon from "@kwangure/strawberry/components/Icon";
     import { mdiLock } from "@mdi/js";
+    import ResultCount from "$lib/components/result_count.svelte";
     import Title from "$lib/components/title.svelte";
     import Tooltip from "@kwangure/strawberry/components/Tooltip";
-
 </script>
 
-<div class="about-bar">
-    About 1 result (<Tooltip>
+<ResultCount count="1">
+    <Tooltip>
         <Icon path={mdiLock}/>
         <svelte:fragment slot="popup">
             Ask me when we meet
         </svelte:fragment>
-    </Tooltip> years old)
-</div>
+    </Tooltip> years old
+</ResultCount>
 <Title/>
 <div class="definition">
     <div class="word-type">
@@ -54,15 +54,9 @@
 </div>
 
 <style>
-    .about-bar {
-        height: 42px;
-        color: var(--font-color-secondary);
-        display: flex;
-        align-items: center;
-        margin-bottom: 16px;
-    }
-    .about-bar :global(.berry-icon) {
-        --br-icon-size: 16px;
+    :global(.about-bar svg) {
+        --br-icon-width: 16px;
+        --br-icon-height: 16px;
         color: var(--goog-blue);
         margin-right: 2px;
     }
@@ -82,6 +76,9 @@
     }
     .account:after {
         content: ":";
+    }
+    .accounts a {
+        color: var(--goog-blue);
     }
     .details {
         margin-top: 8px;
