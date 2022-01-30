@@ -1,5 +1,6 @@
 <script>
-    import "@kwangure/strawberry/css/styles";
+    // @ts-ignore
+    import Theme from "@kwangure/strawberry/css/Theme";
     import { mdiBookOutline, mdiBrightness2, mdiBrightness5, mdiMagnify } from "@mdi/js";
     import Icon from "@kwangure/strawberry/components/Icon";
     import NavLink from "$lib/components/nav_link.svelte";
@@ -8,10 +9,16 @@
 
     $: ({ url: { pathname }} = $page);
 
-    let is_dark = false;
+    let mode = "light";
+
+    function toggle() {
+        mode = mode === "dark" ? "light": "dark";
+    }
 </script>
 
-<div class="layout" class:is_dark>
+<Theme mode={mode}/>
+
+<div class="layout">
     <nav>
         <div class="top">
             <a class="logo" href="/">
@@ -26,11 +33,11 @@
             </a>
             <div class="top-actions">
                 <Tooltip>
-                    <button on:click={() => is_dark = !is_dark}>
-                        <Icon path={is_dark ? mdiBrightness2 : mdiBrightness5}/>
+                    <button on:click={toggle}>
+                        <Icon path={mode === "dark" ? mdiBrightness2 : mdiBrightness5}/>
                     </button>
                     <svelte:fragment slot="popup">
-                        {is_dark ? "Switch to light theme" : "Swtich to dark theme"}
+                        {mode === "dark" ? "Switch to light theme" : "Swtich to dark theme"}
                     </svelte:fragment>
                 </Tooltip>
             </div>
@@ -81,11 +88,13 @@
         --goog-black: #000;
 
         --goog-red: #dd5546;
-        --goog-blue: var(--goog-blue-500);
         --goog-green: #279a48;
         --goog-yellow: #e4ac04;
+    }
 
-        /* ------ Layout Vars ------*/
+    :theme(berry, light) {
+        --goog-blue: var(--goog-blue-500);
+
         --font-color: var(--goog-grey-900);
         --font-color-secondary: var(--goog-grey-500);
         --link-font-color: var(--goog-blue-700);
@@ -93,12 +102,11 @@
         --background-color: var(--goog-white);
         --background-color-hover: var(--goog-grey-100);
         --icon-color: var(--goog-grey-600);
+        --button-hover: var(--background-color-hover);
     }
-    .layout.is_dark {
-        /* ------ Google Vars ------ */
+    :theme(berry, dark) {
         --goog-blue: var(--goog-blue-300);
 
-        /* ------ Layout Vars ------*/
         --font-color: var(--goog-grey-300);
         --font-color-secondary: var(--goog-grey-400);
         --link-font-color: var(--goog-blue-700);
@@ -106,6 +114,8 @@
         --background-color: var(--goog-grey-900);
         --background-color-hover: var(--goog-grey-800);
         --icon-color: var(--goog-grey-200);
+        --logo-color: var(--goog-grey-200);
+        --button-hover: rgba(232, 234, 237, 0.1);
     }
     .layout {
         color: var(--font-color);
@@ -163,31 +173,28 @@
         padding-inline: 26px;
     }
     .logo span:nth-child(1) {
-        color: var(--goog-blue);
+        color: var(--logo-color, var(--goog-blue));
     }
     .logo span:nth-child(2) {
-        color: var(--goog-red);
+        color: var(--logo-color, var(--goog-red));
     }
     .logo span:nth-child(3) {
-        color: var(--goog-yellow);
+        color: var(--logo-color, var(--goog-yellow));
     }
     .logo span:nth-child(4) {
-        color: var(--goog-green);
+        color: var(--logo-color, var(--goog-green));
     }
     .logo span:nth-child(5) {
-        color: var(--goog-blue);
+        color: var(--logo-color, var(--goog-blue));
     }
     .logo span:nth-child(6) {
-        color: var(--goog-yellow);
+        color: var(--logo-color, var(--goog-yellow));
     }
     .logo span:nth-child(7) {
-        color: var(--goog-red);
+        color: var(--logo-color, var(--goog-red));
     }
     .logo span:nth-child(8) {
-        color: var(--goog-blue);
-    }
-    .is_dark .logo span {
-        color: var(--goog-grey-200);
+        color: var(--logo-color, var(--goog-blue));
     }
     .top-actions {
         margin-inline: auto 30px;
@@ -206,10 +213,7 @@
         transition: all var(--br-transition-duration) ease;
     }
     button:hover {
-        background: var(--background-color-hover);
-    }
-    .is_dark button:hover {
-        background: rgba(232, 234, 237, 0.1);
+        background: var(--button-hover);
     }
     button :global(.berry-icon) {
         --br-icon-size: 22px;

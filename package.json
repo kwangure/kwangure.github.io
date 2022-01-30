@@ -24,6 +24,6 @@
   },
   "type": "module",
   "dependencies": {
-    "@kwangure/strawberry": "^0.34.0"
+    "@kwangure/strawberry": "^0.35.0"
   }
 }

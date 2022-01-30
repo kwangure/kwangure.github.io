@@ -15,8 +15,16 @@
 </div>
 
 <style>
+    :theme(berry, dark) {
+        --tab-background-color: #1e1e1e;
+        --menu-background-color: var(--br-grey-dark);
+    }
+    :theme(berry, light) {
+        --tab-background-color: var(--br-grey-lightest);
+        --menu-background-color: var(--br-grey-light);
+    }
     .tab-bar {
-        background-color: var(--br-grey-light);
+        background-color: var(--menu-background-color);
         border-top-left-radius: var(--br-border-radius);
         border-top-right-radius: var(--br-border-radius);
         display: flex;
@@ -24,7 +32,7 @@
     .tab {
         padding: 8px 16px;
         font-size: 14px;
-        background-color: var(--br-grey-lightest);
+        background-color: var(--tab-background-color);
         border-top-left-radius: var(--br-border-radius);
         border-top-right-radius: var(--br-border-radius);
     }

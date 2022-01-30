@@ -56,13 +56,18 @@
         border: 1px solid var(--border-color);
         height: min-content;
     }
-    .audio-wrapper:hover,
-    :global(.is_dark) .audio-wrapper.is_playing {
+    :theme(berry, dark) {
+        --audio-background: var(--background-color-hover);
+    }
+    :theme(berry, light) {
+        --audio-background: var(--goog-blue-100);
+    }
+    .audio-wrapper:hover {
         background: var(--background-color-hover);
     }
     .audio-wrapper.is_playing {
         cursor: default;
-        background-color: var(--goog-blue-100);
+        background-color: var(--audio-background);
         border-color: var(--goog-blue-200);
     }
     .audio {
