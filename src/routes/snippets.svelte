@@ -4,7 +4,6 @@
 
     $: ({ url } = $page);
     $: ({ origin, pathname } = url);
-    $: console.log({ url });
 
     const snippets = [
         {
