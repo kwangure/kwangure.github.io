@@ -3,7 +3,7 @@ import{S as je,i as qe,s as xe,L as We,a3 as H,e as v,j as b,v as A,c as _,a as 
 </button>
 <style>
     button {
-        --color: var(--button-color, red);
+        color: var(--button-color, red);
         width: var(--button-width, 50px);
     }
 </style>`,$$slots:{filename:[Re]},$$scope:{ctx:c}}}),x=new H({props:{inline:!0,language:Z,code:"--button-color"}}),G=new H({props:{inline:!0,language:Z,code:"--button-width"}}),M=new H({props:{inline:!0,language:Z,code:"!important"}}),W=new H({props:{inline:!0,language:Z,code:".repeat.repeat.repeat"}}),Y=new H({props:{inline:!0,language:ce,code:"<style/>"}}),L=new H({props:{inline:!0,language:ce,code:"<div/>"}}),T=new Me({props:{language:ce,code:`<script>
