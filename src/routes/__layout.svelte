@@ -1,6 +1,6 @@
 <script>
     // @ts-ignore
-    import Theme from "@kwangure/strawberry/css/Theme";
+    import Theme from "@kwangure/strawberry/components/Theme";
     import { mdiBookOutline, mdiBrightness2, mdiBrightness5, mdiMagnify } from "@mdi/js";
     import Icon from "@kwangure/strawberry/components/Icon";
     import NavLink from "$lib/components/nav_link.svelte";
@@ -91,31 +91,34 @@
         --goog-green: #279a48;
         --goog-yellow: #e4ac04;
     }
+    @media (theme: berry) and (prefers-color-scheme: light) {
+        :scope {
+            --goog-blue: var(--goog-blue-500);
 
-    :theme(berry, light) {
-        --goog-blue: var(--goog-blue-500);
-
-        --font-color: var(--goog-grey-900);
-        --font-color-secondary: var(--goog-grey-500);
-        --link-font-color: var(--goog-blue-700);
-        --border-color: var(--goog-grey-200);
-        --background-color: var(--goog-white);
-        --background-color-hover: var(--goog-grey-100);
-        --icon-color: var(--goog-grey-600);
-        --button-hover: var(--background-color-hover);
+            --font-color: var(--goog-grey-900);
+            --font-color-secondary: var(--goog-grey-500);
+            --link-font-color: var(--goog-blue-700);
+            --border-color: var(--goog-grey-200);
+            --background-color: var(--goog-white);
+            --background-color-hover: var(--goog-grey-100);
+            --icon-color: var(--goog-grey-600);
+            --button-hover: var(--background-color-hover);
+        }
     }
-    :theme(berry, dark) {
-        --goog-blue: var(--goog-blue-300);
+    @media (theme: berry) and (prefers-color-scheme: dark) {
+        :scope {
+            --goog-blue: var(--goog-blue-300);
 
-        --font-color: var(--goog-grey-300);
-        --font-color-secondary: var(--goog-grey-400);
-        --link-font-color: var(--goog-blue-700);
-        --border-color: var(--goog-grey-700);
-        --background-color: var(--goog-grey-900);
-        --background-color-hover: var(--goog-grey-800);
-        --icon-color: var(--goog-grey-200);
-        --logo-color: var(--goog-grey-200);
-        --button-hover: rgba(232, 234, 237, 0.1);
+            --font-color: var(--goog-grey-300);
+            --font-color-secondary: var(--goog-grey-400);
+            --link-font-color: var(--goog-blue-300);
+            --border-color: var(--goog-grey-700);
+            --background-color: var(--goog-grey-900);
+            --background-color-hover: var(--goog-grey-800);
+            --icon-color: var(--goog-grey-200);
+            --logo-color: var(--goog-grey-200);
+            --button-hover: rgba(232, 234, 237, 0.1);
+        }
     }
     .layout {
         color: var(--font-color);

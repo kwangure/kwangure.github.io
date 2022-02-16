@@ -56,11 +56,15 @@
         border: 1px solid var(--border-color);
         height: min-content;
     }
-    :theme(berry, dark) {
-        --audio-background: var(--background-color-hover);
+    @media (theme: berry) and (prefers-color-scheme: dark) {
+        :scope {
+            --audio-background: var(--background-color-hover);
+        }
     }
-    :theme(berry, light) {
-        --audio-background: var(--goog-blue-100);
+    @media (theme: berry) and (prefers-color-scheme: light) {
+        :scope {
+            --audio-background: var(--goog-blue-100);
+        }
     }
     .audio-wrapper:hover {
         background: var(--background-color-hover);

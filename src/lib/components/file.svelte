@@ -15,13 +15,17 @@
 </div>
 
 <style>
-    :theme(berry, dark) {
-        --tab-background-color: #1e1e1e;
-        --menu-background-color: var(--br-grey-dark);
+    @media (theme: berry) and (prefers-color-scheme: dark) {
+        :scope {
+            --tab-background-color: #1e1e1e;
+            --menu-background-color: var(--br-grey-dark);
+        }
     }
-    :theme(berry, light) {
-        --tab-background-color: var(--br-grey-lightest);
-        --menu-background-color: var(--br-grey-light);
+    @media (theme: berry) and (prefers-color-scheme: light) {
+        :scope {
+            --tab-background-color: var(--br-grey-lightest);
+            --menu-background-color: var(--br-grey-light);
+        }
     }
     .tab-bar {
         background-color: var(--menu-background-color);
