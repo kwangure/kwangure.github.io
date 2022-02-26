@@ -31,6 +31,8 @@
     article {
         --h2-counter: h2-counter;
         counter-reset: var(--h1-counter);
+        height: 100%;
+        margin: 20px 0;
     }
     h1 {
         counter-reset: var(--h2-counter);
@@ -38,6 +40,14 @@
     h2 {
         color: #999;
         font-size: 20px;
+    }
+    article :global(h2:before) {
+        content: counter(var(--h2-counter)) ".\0000a0";
+        counter-increment: var(--h2-counter);
+    }
+    article h2:before {
+        content: "";
+        counter-reset: var(--h2-counter);
     }
     article :global(p) {
         line-height: 2;
