@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="/_app/assets/berry.dark-1d74dade.css" media="(prefers-color-scheme: dark)" data-svelte="svelte-1l8l244"><link rel="stylesheet" href="/_app/assets/berry.light-e4bb97d2.css" media="(prefers-color-scheme: light)" data-svelte="svelte-1l8l244">
+
+		
+
+		<link rel="stylesheet" href="/_app/assets/start-61d1577b.css">
+		<link rel="stylesheet" href="/_app/assets/vendor-16e2b480.css">
+		<link rel="stylesheet" href="/_app/assets/pages/__layout.svelte-665f1a4b.css">
+		<link rel="stylesheet" href="/_app/assets/pages/snippets/__layout.svelte-a3643dcf.css">
+		<link rel="stylesheet" href="/_app/assets/section.svelte_svelte_type_style_lang-424fddc1.css">
+		<link rel="modulepreload" href="/_app/start-0dc170c6.js">
+		<link rel="modulepreload" href="/_app/chunks/vendor-cab6fdc7.js">
+		<link rel="modulepreload" href="/_app/pages/__layout.svelte-45b0eb72.js">
+		<link rel="modulepreload" href="/_app/chunks/stores-79db28aa.js">
+		<link rel="modulepreload" href="/_app/pages/snippets/__layout.svelte-aae64427.js">
+		<link rel="modulepreload" href="/_app/pages/snippets/the-right-way-to-implement-dark-mode-in-svelte.md-22b89c43.js">
+		<link rel="modulepreload" href="/_app/chunks/section.svelte_svelte_type_style_lang-6cd52025.js">
+
+		<script type="module">
+			import { start } from "/_app/start-0dc170c6.js";
+			start({
+				target: document.querySelector("body"),
+				paths: {"base":"","assets":""},
+				session: {},
+				route: true,
+				spa: false,
+				trailing_slash: "never",
+				hydrate: {
+					status: 200,
+					error: null,
+					nodes: [
+						import("/_app/pages/__layout.svelte-45b0eb72.js"),
+						import("/_app/pages/snippets/__layout.svelte-aae64427.js"),
+						import("/_app/pages/snippets/the-right-way-to-implement-dark-mode-in-svelte.md-22b89c43.js")
+					],
+					url: new URL("http://prerender/snippets/the-right-way-to-implement-dark-mode-in-svelte"),
+					params: {}
+				}
+			});
+		</script>
+	</head>
+	<body>
+		
+
+
+
+
+<div class="layout svelte-1q5b69e"><nav class="svelte-1q5b69e"><div class="top svelte-1q5b69e"><a class="logo svelte-1q5b69e" href="/"><span class="svelte-1q5b69e">K</span>
+                <span class="svelte-1q5b69e">w</span>
+                <span class="svelte-1q5b69e">a</span>
+                <span class="svelte-1q5b69e">n</span>
+                <span class="svelte-1q5b69e">g</span>
+                <span class="svelte-1q5b69e">u</span>
+                <span class="svelte-1q5b69e">r</span>
+                <span class="svelte-1q5b69e">e</span></a>
+            <div class="top-actions svelte-1q5b69e"><button class="svelte-1q5b69e"><svg viewBox="0 0 24 24" class="svelte-1qwph3y"><path d="M12,18A6,6 0 0,1 6,12A6,6 0 0,1 12,6A6,6 0 0,1 18,12A6,6 0 0,1 12,18M20,15.31L23.31,12L20,8.69V4H15.31L12,0.69L8.69,4H4V8.69L0.69,12L4,15.31V20H8.69L12,23.31L15.31,20H20V15.31Z" class="svelte-1qwph3y"></path></svg></button>
+<div class="berry-tooltip svelte-1npg1b2" data-popper-placement="bottom"><div class="arrow svelte-1npg1b2"></div>
+    Swtich to dark theme
+                    
+</div></div></div>
+        <div class="bottom svelte-1q5b69e"><div class="bottom-actions svelte-1q5b69e"><a class="action svelte-1wdrt6c" href="/"><div class="action-text svelte-1wdrt6c"><svg viewBox="0 0 24 24" class="svelte-1qwph3y"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" class="svelte-1qwph3y"></path></svg>Lookup
+                </div>
+    
+</a>
+                <a class="action svelte-1wdrt6c active" href="/snippets"><div class="action-text svelte-1wdrt6c"><svg viewBox="0 0 24 24" class="svelte-1qwph3y"><path d="M18,2A2,2 0 0,1 20,4V20A2,2 0 0,1 18,22H6A2,2 0 0,1 4,20V4A2,2 0 0,1 6,2H18M18,4H13V12L10.5,9.75L8,12V4H6V20H18V4Z" class="svelte-1qwph3y"></path></svg>Snippets
+                </div>
+    
+</a></div></div></nav>
+    <main class="svelte-1q5b69e"><div class="snippet-wrapper svelte-2furzb">
+
+<article class="svelte-3g1fiy"><h1 class="svelte-3g1fiy">
+        The right way to implement dark mode in Svelte</h1>
+    <h2 class="svelte-3g1fiy">
+            <p>This is a general outline on how to add themes and color-schemes to your
+Sveltekit setup using custom-properties/CSS variables and prefers-color-scheme.</p></h2>
+    <h2>Styling Svelte components based on system preferences</h2>
+<p>This post assumes you already
+<a href="/snippets/how-export-css-api-from-svelte-component">use custom properties to style your Svelte components</a>
+as guided by the prior snippet in this series. Using custom properties, you should separate the
+color values of our component using <css>prefers-color-scheme</css>.</p>
+<p>Your component should look something like this:</p>
+<pre class="berry-code hljs svelte-ayg4fc"><code class="svelte-ayg4fc"><!-- HTML_TAG_START --><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span></span><span class="language-css">
+    <span class="hljs-selector-tag">button</span> {
+        <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--button-color, --default-button-color);
+    }
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">prefers-color-scheme</span>: dark) {
+        <span class="hljs-selector-tag">button</span> {
+            <span class="hljs-attr">--default-button-color</span>: pink;
+        }
+    }
+    <span class="hljs-keyword">@media</span> (<span class="hljs-attribute">prefers-color-scheme</span>: light) {
+        <span class="hljs-selector-tag">button</span> {
+            <span class="hljs-attr">--default-button-color</span>: red;
+        }
+    }
+</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</span><!-- HTML_TAG_END --></code>
+</pre>
+<p>With your styles separated into dark and light media queries, your components will be themed
+based on the dark/light mode system preference of the OS. For some sites, that may be good
+enough, but what if you want to allow users to theme your site different from the OS preference?</p>
+<h2>Style Svelte components based on user preference.</h2>
+<p>To preserve user preference, use JavaScript to store preference in <js>localStorage</js>. In your
+page component, such as a <a href="https://kit.svelte.dev/docs/layouts"><pre class="berry-code hljs svelte-ayg4fc inline"><code class="svelte-ayg4fc"><!-- HTML_TAG_START -->__layout.svelte<!-- HTML_TAG_END --></code>
+</pre> in Sveltekit</a>,</p>
+<pre class="berry-code hljs svelte-ayg4fc"><code class="svelte-ayg4fc"><!-- HTML_TAG_START --><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span></span><span class="language-javascript">
+    <span class="hljs-keyword">import</span> { onMount } <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;svelte&quot;</span>;
+
+    <span class="hljs-keyword">const</span> storageKey = <span class="hljs-string">&quot;user-theme&quot;</span>;
+
+    <span class="hljs-keyword">let</span> preference;
+    <span class="hljs-comment">// Persist user preference</span>
+</span><span class="hljs-keyword">    $: </span><span class="language-javascript">preference &amp;&amp; <span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">setItem</span>(storageKey, <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">stringify</span>(preference));
+
+    <span class="hljs-keyword">function</span> <span class="hljs-title function_">toggle</span>(<span class="hljs-params"></span>) {
+        preference = preference === <span class="hljs-string">&#x27;light&#x27;</span>
+            ? <span class="hljs-string">&#x27;dark&#x27;</span>
+            : <span class="hljs-string">&#x27;light&#x27;</span>
+    }
+
+    <span class="hljs-comment">// localStorage and window is only available in the browser</span>
+    <span class="hljs-title function_">onMount</span>(<span class="hljs-function">() =&gt;</span> {
+        preference = <span class="hljs-title class_">JSON</span>.<span class="hljs-title function_">parse</span>(<span class="hljs-variable language_">localStorage</span>.<span class="hljs-title function_">getItem</span>(storageKey));
+        <span class="hljs-keyword">if</span> (!preference) {
+            preference = <span class="hljs-variable language_">window</span>.<span class="hljs-title function_">matchMedia</span>(<span class="hljs-string">&#x27;(prefers-color-scheme: dark)&#x27;</span>).<span class="hljs-property">matches</span>
+                ? <span class="hljs-string">&#x27;dark&#x27;</span>
+                : <span class="hljs-string">&#x27;light&#x27;</span>
+        }
+
+        <span class="hljs-variable language_">window</span>
+            .<span class="hljs-title function_">matchMedia</span>(<span class="hljs-string">&#x27;(prefers-color-scheme: dark)&#x27;</span>)
+            .<span class="hljs-title function_">addEventListener</span>(<span class="hljs-string">&#x27;change&#x27;</span>, <span class="hljs-function">(<span class="hljs-params">{ matches: isDark }</span>) =&gt;</span> {
+                preference = isDark ? <span class="hljs-string">&#x27;dark&#x27;</span> : <span class="hljs-string">&#x27;light&#x27;</span>
+            })
+    });
+</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;layout&quot;</span> <span class="hljs-attr">data-theme</span>=</span></span><span class="language-javascript">{preference}</span><span class="language-xml"><span class="hljs-tag">&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">on:click</span>=</span></span><span class="language-javascript">{toggle}</span><span class="language-xml"><span class="hljs-tag"> <span class="hljs-attr">aria-label</span>=</span></span><span class="language-javascript">{preference}</span><span class="language-xml"><span class="hljs-tag">&gt;</span>
+        Switch to </span><span class="language-javascript">{theme.<span class="hljs-property">value</span> === <span class="hljs-string">&#x27;light&#x27;</span>: <span class="hljs-string">&#x27;dark&#x27;</span> : <span class="hljs-string">&#x27;light&#x27;</span>}</span><span class="language-xml">
+    <span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+    </span><span class="hljs-comment">&lt;!--- Your app --&gt;</span><span class="language-xml">
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</span><!-- HTML_TAG_END --></code>
+</pre>
+<p>Then styling your components based on user preference will look something like this:</p>
+<pre class="berry-code hljs svelte-ayg4fc"><code class="svelte-ayg4fc"><!-- HTML_TAG_START --><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">slot</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">slot</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span></span><span class="language-css">
+    <span class="hljs-selector-tag">button</span> {
+        <span class="hljs-attribute">color</span>: <span class="hljs-built_in">var</span>(--button-color, --default-button-color);
+    }
+    :<span class="hljs-built_in">global</span>([data-theme=dark]) button {
+        <span class="hljs-attr">--default-button-color</span>: pink;
+    }
+    :<span class="hljs-built_in">global</span>([data-theme=dark]) button {
+        <span class="hljs-attr">--default-button-color</span>: red;
+    }
+</span><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+</span><!-- HTML_TAG_END --></code>
+</pre>
+</article>
+</div></main>
+</div>
+
+
+	</body>
+</html>
