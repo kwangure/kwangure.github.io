@@ -25,6 +25,22 @@ components or design system.`,
                 }
             ],
         },
+         {
+             title: "The right way to implement dark mode in Svelte",
+             url: "the-right-way-to-implement-dark-mode-in-svelte",
+             excerpt: `This is a general outline on how to add themes and color-schemes to your
+ Sveltekit setup using custom-properties/CSS variables and prefers-color-scheme.`,
+             subtitles: [
+                 {
+                     subtitle: "Styling based on system preference",
+                     id: "",
+                 },
+                 {
+                     subtitle: "Styling based on user preference",
+                     id: "",
+                 }
+             ],
+         },
     ];
 </script>
 
@@ -37,13 +53,13 @@ components or design system.`,
             <span class="origin">{origin}</span>
             <span class="path">{pathname.split("/").join(" › ")}</span>
         </div>
-        <a class="title" href="snippets/{url}">{title}</a>
+        <a class="title" href="/snippets/{url}">{title}</a>
         <div class="excerpt">
             {@html excerpt}
         </div>
         <div class="subtitles">
             {#each subtitles as {id, subtitle}, i}
-                <a href="snippets/{url}/#{id}" class="subtitle">{subtitle}</a>
+                <a href="/snippets/{url}/#{id}" class="subtitle">{subtitle}</a>
                 {#if i !== subtitles.length-1}<span>•</span>{/if}
             {/each}
         </div>
