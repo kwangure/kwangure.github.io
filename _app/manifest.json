@@ -1,6 +1,6 @@
 {
   ".svelte-kit/build/runtime/internal/start.js": {
-    "file": "start-0dc170c6.js",
+    "file": "start-dc927116.js",
     "src": ".svelte-kit/build/runtime/internal/start.js",
     "isEntry": true,
     "imports": [
@@ -87,7 +87,7 @@
     ]
   },
   "src/routes/snippets.svelte": {
-    "file": "pages/snippets.svelte-8c661536.js",
+    "file": "pages/snippets.svelte-f8eac0d2.js",
     "src": "src/routes/snippets.svelte",
     "isEntry": true,
     "isDynamicEntry": true,
